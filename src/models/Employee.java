@@ -18,7 +18,7 @@ import javax.persistence.Table;
             query = "SELECT e FROM Employee AS e ORDER BY e.id DESC"
             ),
     @NamedQuery(
-            name = "getEmployeeCount",
+            name = "getEmployeesCount",
             query = "SELECT COUNT(e) FROM Employee AS e"
             ),
     @NamedQuery(
@@ -61,62 +61,68 @@ public class Employee {
     private Integer delete_flag;
 
 
-public void setId(Integer id) {
-    this.id = id;
-}
+    public Integer getId() {
+        return id;
+    }
 
-public String getCode() {
-    return code;
-}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-public void setCode(String code) {
-    this.code = code;
-}
+    public String getCode() {
+        return code;
+    }
 
-public String getName() {
-    return name;
-}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-public void setName(String name) {
-    this.name = name;
-}
-public String getPassword() {
-    return password;
-}
+    public String getName() {
+        return name;
+    }
 
-public void setPassword(String password) {
-    this.password = password;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public Integer getAdmin_flag() {
-    return admin_flag;
-}
+    public String getPassword() {
+        return password;
+    }
 
-public void setAdmin_flag(Integer admin_flag) {
-    this.admin_flag = admin_flag;
-}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-public Timestamp getCreated_at() {
-    return created_at;
-}
+    public Integer getAdmin_flag() {
+        return admin_flag;
+    }
 
-public void setCreated_at(Timestamp created_at) {
-    this.created_at = created_at;
-}
+    public void setAdmin_flag(Integer admin_flag) {
+        this.admin_flag = admin_flag;
+    }
 
-public Timestamp getUpdated_at() {
-    return updated_at;
-}
+    public Timestamp getCreated_at() {
+        return created_at;
+    }
 
-public void setUpdated_at(Timestamp updated_at) {
-    this.updated_at = updated_at;
-}
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
+    }
 
-public Integer getDelete_flag() {
-    return delete_flag;
-}
+    public Timestamp getUpdated_at() {
+        return updated_at;
+    }
 
-public void setDelete_flag(Integer delete_flag) {
-    this.delete_flag = delete_flag;
-}
+    public void setUpdated_at(Timestamp updated_at) {
+        this.updated_at = updated_at;
+    }
+
+    public Integer getDelete_flag() {
+        return delete_flag;
+    }
+
+    public void setDelete_flag(Integer delete_flag) {
+        this.delete_flag = delete_flag;
+    }
+
 }
