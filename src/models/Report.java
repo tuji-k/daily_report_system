@@ -1,5 +1,6 @@
 package models;
 
+
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -15,12 +16,17 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+
 @Table(name = "reports")
 @NamedQueries({
-        @NamedQuery(name = "getAllReports", query = "SELECT r FROM Report AS r ORDER BY r.id DESC"),
-        @NamedQuery(name = "getReportsCount", query = "SELECT COUNT(r) FROM Report AS r"),
-
-
+    @NamedQuery(
+            name = "getAllReports",
+            query = "SELECT r FROM Report AS r ORDER BY r.id DESC"
+            ),
+    @NamedQuery(
+            name = "getReportsCount",
+            query = "SELECT COUNT(r) FROM Report AS r"
+            ),
 })
 @Entity
 public class Report {
@@ -43,11 +49,23 @@ private String title;
 @Column(name = "content", nullable = false)
 private String content;
 
-@Column(name = "created_at",nullable = false)
+@Column(name = "created_at", nullable = false)
+private Timestamp created_at;
+
+@Column(name = "updated_at", nullable = false)
 private Timestamp updated_at;
+
 
 public Integer getId() {
     return id;
+}
+
+public Timestamp getCreated_at() {
+    return created_at;
+}
+
+public void setCreated_at(Timestamp created_at) {
+    this.created_at = created_at;
 }
 
 public void setId(Integer id) {
